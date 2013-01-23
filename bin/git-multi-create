@@ -9,6 +9,8 @@ set -e
 
 mkdir -p .git-multi
 
+unset GIT_WORK_TREE
+
 git init --bare ".git-multi/${1}"
 
 git config -f ".git-multi/${1}/config" core.bare false
