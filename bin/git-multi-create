@@ -11,10 +11,14 @@ mkdir -p .git-multi
 
 unset GIT_WORK_TREE
 
-git init --bare ".git-multi/${1}"
+for name in "$@"
+do
+	git init --bare ".git-multi/${name}"
 
-git config -f ".git-multi/${1}/config" core.bare false
-git config -f ".git-multi/${1}/config" core.worktree "../../"
+	git config -f ".git-multi/${name}/config" core.bare false
+	git config -f ".git-multi/${name}/config" core.worktree "../../"
 
-mkdir -p ".git-multi/${1}/info"
-echo ".git-multi/" >> .git-multi/${1}/info/exclude
+	mkdir -p ".git-multi/${name}/info"
+
+	echo ".git-multi/" >> .git-multi/${1}/info/exclude
+done
