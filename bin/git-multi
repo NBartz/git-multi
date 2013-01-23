@@ -26,7 +26,7 @@ Run a command as if it were being run inside a Git reposistory:
         sys.exit(0)
 
 def run_command(script, suffix, arguments):
-    valid_commands = ['work', 'run', 'add']
+    valid_commands = ['work', 'run', 'add', 'create']
     try:
         valid_commands.index(suffix)
     except ValueError:
