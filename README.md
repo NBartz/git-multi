@@ -41,6 +41,12 @@ git multi add grahamc git@github.com:grahamc/dotfiles.git
 That intializes the structure, clones it to `.git-multi/grahamc/` and checks it
 out into your current directory.
 
+Alternatively
+```bash
+git multi create nbartz secondRepo YARN
+```
+That initializes the structure and as empty repositories as arguments are given.
+
 ### Working with the repository
 The idea here is  `git multi` doesn't have to create a new interface for all
 the git commands.
